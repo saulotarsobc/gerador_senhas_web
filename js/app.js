@@ -36,9 +36,13 @@ function changeSize(action) {
     let atualSize = parseInt(size.value);
 
     if (action == "more") {
-        updateSize(atualSize + 1);
+        if (atualSize < MORE_LIMIT){
+            updateSize(atualSize + 1);
+        }
     } else {
-        updateSize(atualSize - 1);
+        if (atualSize > LESS_LIMIT){
+            updateSize(atualSize - 1);
+        }
     }
 
     console.log(atualSize);
