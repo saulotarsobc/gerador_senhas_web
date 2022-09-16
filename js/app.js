@@ -51,8 +51,6 @@ function changeSize(action) {
             updateSize(atualSize - 1);
         }
     }
-
-    console.log(atualSize);
 }
 
 function getPass() {
@@ -67,4 +65,6 @@ function getPass() {
     showPass(newPass)
 }
 
-getPass();
+document.addEventListener('DOMContentLoaded', function () {
+    getPass();
+}, false);
