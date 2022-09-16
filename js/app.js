@@ -1,7 +1,7 @@
 const size = document.querySelector("#input_size");
 const pass = document.querySelector("#pass");
 const input_size = document.querySelector("#input_size");
-const MORE_LIMIT = 24;
+const MORE_LIMIT = 22;
 const LESS_LIMIT = 8;
 
 function getUpper() {
@@ -36,11 +36,11 @@ function changeSize(action) {
     let atualSize = parseInt(size.value);
 
     if (action == "more") {
-        if (atualSize < MORE_LIMIT){
+        if (atualSize < MORE_LIMIT) {
             updateSize(atualSize + 1);
         }
     } else {
-        if (atualSize > LESS_LIMIT){
+        if (atualSize > LESS_LIMIT) {
             updateSize(atualSize - 1);
         }
     }
