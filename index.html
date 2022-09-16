@@ -18,8 +18,8 @@
         <div id="configs">
             <div id="size">
                 <div id="controls">
-                    <button id="more">+</button>
-                    <button id="less">-</button>
+                    <button onclick="changeSize('more')" id="more">+</button>
+                    <button onclick="changeSize('less')" id="less">-</button>
                 </div>
 
                 <input id="input_size" type="text" value="8" disabled>
@@ -32,7 +32,7 @@
                 </div>
 
                 <div class="wrap_type">
-                    <input type="checkbox" class="type" id="low" checked>
+                    <input type="checkbox" class="type" id="low">
                     <label for="low">Minúscula</label>
                 </div>
 

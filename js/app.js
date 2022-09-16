@@ -1,5 +1,8 @@
 const size = document.querySelector("#input_size");
 const pass = document.querySelector("#pass");
+const input_size = document.querySelector("#input_size");
+const MORE_LIMIT = 24;
+const LESS_LIMIT = 8;
 
 function getUpper() {
     const upper = "ABCDEFGHIJCLMNOPQRSTUVXYZ";
@@ -21,13 +24,28 @@ function getSpecial() {
     return special[Math.floor(Math.random() * special.length)];
 }
 
-function cleanpass() {
-    pass.value = "";
+function updateSize(val) {
+    input_size.value = val;
 }
 
-function showPass(val) {
-    cleanpass();
-    pass.value = val;
+function showPass(newPass) {
+    pass.value = newPass;
+}
+
+function changeSize(action) {
+    let atualSize = parseInt(size.value);
+
+    if ((atualSize > LESS_LIMIT) && (atualSize < MORE_LIMIT)) {
+
+        if (action == "more") {
+            updateSize(atualSize + 1);
+        } else {
+            updateSize(atualSize - 1);
+        }
+
+    }
+
+    console.log(atualSize);
 }
 
 
@@ -37,7 +55,7 @@ function getPass() {
 
     while (count < parseInt(size.value)) {
         newPass += getUpper();
-        count++
+        count++;
     }
 
     showPass(newPass)
