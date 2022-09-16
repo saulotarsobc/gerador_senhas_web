@@ -10,8 +10,8 @@ body {
 
     #wrap {
         background-color: royalblue;
-        height: 400px;
-        width: 280px;
+        height: 530px;
+        width: 380px;
         border-radius: 10px;
         padding: 20px;
         background: #c5c5c51a;
@@ -28,8 +28,8 @@ body {
     }
 
     #pass {
-        height: 50px;
-        padding: 10px;
+        height: 70px;
+        padding: 10px 20px;
         // text-align: center;
         font-size: 20px;
         border-radius: 6px;
@@ -44,7 +44,7 @@ body {
 
     #configs {
         display: flex;
-        height: 90px;
+        height: 120px;
         background-color: white;
         padding: 5px;
         border-radius: 6px;
@@ -56,7 +56,7 @@ body {
                 display: flex;
                 flex-direction: column;
                 height: 100%;
-                width: 40px;
+                width: 58px;
 
                 button {
                     height: 50%;
@@ -75,10 +75,9 @@ body {
                 }
             }
 
-            input {
-                height: 80px;
-                width: 70px;
-                font-size: 30px;
+            #input_size {
+                width: 80px;
+                font-size: 40px;
                 text-align: center;
                 background: #313131;
                 color: white;
@@ -87,13 +86,12 @@ body {
         }
 
         #types {
-            height: 80px;
             width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding-left: 10px;
-            font-size: 14px;
+            padding-left: 30px;
+            font-size: 18px;
 
             .wrap_type {
                 // input {}
