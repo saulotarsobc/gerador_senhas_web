@@ -4,6 +4,13 @@ const input_size = document.querySelector("#input_size");
 const MORE_LIMIT = 22;
 const LESS_LIMIT = 8;
 
+function copyPass() {
+    pass.select();
+    pass.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(pass.value);
+    alert("Senha copiada: " + pass.value);
+}
+
 function getUpper() {
     const upper = "ABCDEFGHIJCLMNOPQRSTUVXYZ";
     return upper[Math.floor(Math.random() * upper.length)];
