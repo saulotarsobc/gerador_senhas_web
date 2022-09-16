@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#94bbe9" />
-    <title>Gerador de Senhas</title>
+    <title>Saulo - Gerador de Senhas</title>
+    <meta name="description" content="Site para gerar senhas aletórias. Basta escolher a quantidade de caracteres e entre Miúsculas, minúsculas, números e caracteres especiais. Gerar, copiar e usar.">
     <link rel="stylesheet" href="./css/main.min.css">
 </head>
 
@@ -14,7 +15,7 @@
 
     <div id="wrap">
 
-        <input id="pass" type="text" disabled>
+        <input id="pass" type="text" disabled aria-hidden="true">
 
         <div id="configs">
             <div id="size">
@@ -23,7 +24,7 @@
                     <button onclick="changeSize('less')" id="less">-</button>
                 </div>
 
-                <input id="input_size" type="text" value="8" disabled>
+                <input id="input_size" type="text" value="8" disabled aria-hidden="true">
             </div>
 
             <div id="types">

@@ -55,8 +55,6 @@ function changeSize(action) {
     console.log(atualSize);
 }
 
-
-
 function getPass() {
     let count = 0;
     let newPass = "";
