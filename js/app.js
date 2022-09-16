@@ -35,18 +35,15 @@ function showPass(newPass) {
 function changeSize(action) {
     let atualSize = parseInt(size.value);
 
-    if ((atualSize > LESS_LIMIT) && (atualSize < MORE_LIMIT)) {
-
-        if (action == "more") {
-            updateSize(atualSize + 1);
-        } else {
-            updateSize(atualSize - 1);
-        }
-
+    if (action == "more") {
+        updateSize(atualSize + 1);
+    } else {
+        updateSize(atualSize - 1);
     }
 
     console.log(atualSize);
 }
+
 
 
 function getPass() {
