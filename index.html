@@ -8,54 +8,60 @@
     <meta name="theme-color" content="#94bbe9" />
     <title>Saulo - Gerador de Senhas</title>
     <link rel="icon" type="image/x-icon" href="/icon/padlock.png">
-    <meta name="description" content="Site para gerar senhas aletórias. Basta escolher a quantidade de caracteres e entre Miúsculas, minúsculas, números e caracteres especiais. Gerar, copiar e usar.">
+    <meta name="description"
+        content="Site para gerar senhas aletórias. Basta escolher a quantidade de caracteres e entre Miúsculas, minúsculas, números e caracteres especiais. Gerar, copiar e usar.">
     <link rel="stylesheet" href="./css/main.min.css">
 </head>
 
 <body>
 
-    <div id="wrap">
+    <main>
 
-        <input id="pass" type="text" disabled aria-hidden="true" aria-disabled="true">
 
-        <div id="configs">
-            <div id="size">
-                <div id="controls">
-                    <button onclick="changeSize('more')" id="more">+</button>
-                    <button onclick="changeSize('less')" id="less">-</button>
+
+        <div id="wrap">
+
+            <input id="pass" type="text" aria-hidden="true" aria-disabled="true">
+
+            <div id="configs">
+                <div id="size">
+                    <div id="controls">
+                        <button onclick="changeSize('more')" id="more" aria-roledescription="aumentar a quantidade de caracteres da senha">+</button>
+                        <button onclick="changeSize('less')" id="less" aria-roledescription="diminuir a quantidade de caracteres da senha">-</button>
+                    </div>
+
+                    <input id="input_size" type="text" disabled aria-hidden="true" aria-disabled="true">
                 </div>
 
-                <input id="input_size" type="text" value="8" disabled aria-hidden="true" aria-disabled="true">
+                <div id="types">
+                    <div class="wrap_type">
+                        <input type="checkbox" class="type" id="upper" checked aria-checked="true" aria-label="Maiúscula">
+                        <label for="upper">Maiúscula</label>
+                    </div>
+
+                    <div class="wrap_type">
+                        <input type="checkbox" class="type" id="low" aria-checked="false" aria-label="Minúscula">
+                        <label for="low">Minúscula</label>
+                    </div>
+
+                    <div class="wrap_type">
+                        <input type="checkbox" class="type" id="number" aria-checked="false" aria-label="Números">
+                        <label for="number">Números</label>
+                    </div>
+
+                    <div class="wrap_type">
+                        <input type="checkbox" class="type" id="special" aria-checked="false" aria-label="Especiais">
+                        <label for="special">Especiais</label>
+                    </div>
+                </div>
             </div>
 
-            <div id="types">
-                <div class="wrap_type">
-                    <input type="checkbox" class="type" id="upper" checked>
-                    <label for="upper">Maiúscula</label>
-                </div>
-
-                <div class="wrap_type">
-                    <input type="checkbox" class="type" id="low">
-                    <label for="low">Minúscula</label>
-                </div>
-
-                <div class="wrap_type">
-                    <input type="checkbox" class="type" id="number">
-                    <label for="number">Números</label>
-                </div>
-
-                <div class="wrap_type">
-                    <input type="checkbox" class="type" id="special">
-                    <label for="special">Especiais</label>
-                </div>
+            <div id="btns">
+                <button class="btn" id="gerar" onclick="getPass()">Gerar Senha</button>
+                <button class="btn" id="copiar" onclick="copyPass()">Copiar</button>
             </div>
         </div>
-
-        <div id="btns">
-            <button class="btn" id="gerar" onclick="getPass()">Gerar Senha</button>
-            <button class="btn" id="copiar" onclick="copyPass()">Copiar</button>
-        </div>
-    </div>
+    </main>
 
     <script src="./js/app.js"></script>
 </body>

@@ -65,6 +65,6 @@ function getPass() {
     showPass(newPass)
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    getPass();
-}, false);
+
+updateSize(8);
+getPass();
