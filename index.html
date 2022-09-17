@@ -17,8 +17,6 @@
 
     <main>
 
-
-
         <div id="wrap">
 
             <input id="pass" type="text" aria-hidden="true" aria-disabled="true">
@@ -26,8 +24,10 @@
             <div id="configs">
                 <div id="size">
                     <div id="controls">
-                        <button onclick="changeSize('more')" id="more" aria-roledescription="aumentar a quantidade de caracteres da senha">+</button>
-                        <button onclick="changeSize('less')" id="less" aria-roledescription="diminuir a quantidade de caracteres da senha">-</button>
+                        <button onclick="changeSize('more')" id="more"
+                            aria-roledescription="aumentar a quantidade de caracteres da senha">+</button>
+                        <button onclick="changeSize('less')" id="less"
+                            aria-roledescription="diminuir a quantidade de caracteres da senha">-</button>
                     </div>
 
                     <input id="input_size" type="text" disabled aria-hidden="true" aria-disabled="true">
@@ -35,13 +35,14 @@
 
                 <div id="types">
                     <div class="wrap_type">
-                        <input type="checkbox" class="type" id="upper" checked aria-checked="true" aria-label="Maiúscula">
+                        <input type="checkbox" class="type" id="upper" checked aria-checked="true"
+                            aria-label="Maiúscula" disabled>
                         <label for="upper">Maiúscula</label>
                     </div>
 
                     <div class="wrap_type">
-                        <input type="checkbox" class="type" id="low" aria-checked="false" aria-label="Minúscula">
-                        <label for="low">Minúscula</label>
+                        <input type="checkbox" class="type" id="lower" aria-checked="false" aria-label="Minúscula">
+                        <label for="lower">Minúscula</label>
                     </div>
 
                     <div class="wrap_type">

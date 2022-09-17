@@ -1,6 +1,12 @@
 const size = document.querySelector("#input_size");
 const pass = document.querySelector("#pass");
 const input_size = document.querySelector("#input_size");
+
+const upper = document.querySelector("#upper");
+const lower = document.querySelector("#lower");
+const number = document.querySelector("#number");
+const special = document.querySelector("#special");
+
 const MORE_LIMIT = 22;
 const LESS_LIMIT = 8;
 
@@ -16,9 +22,9 @@ function getUpper() {
     return upper[Math.floor(Math.random() * upper.length)];
 }
 
-function getLow() {
-    const low = "abcdefghijklmnopqrstuvxyz";
-    return low[Math.floor(Math.random() * low.length)];
+function getLower() {
+    const lower = "abcdefghijklmnopqrstuvxyz";
+    return lower[Math.floor(Math.random() * lower.length)];
 }
 
 function getNumber() {
@@ -58,8 +64,25 @@ function getPass() {
     let newPass = "";
 
     while (count < parseInt(size.value)) {
-        newPass += getUpper();
-        count++;
+        if (upper.checked){
+            newPass += getUpper();
+            count++;
+        }
+
+        if (lower.checked){
+            newPass += getLower();
+            count++;
+        }
+
+        if (number.checked){
+            newPass += getNumber();
+            count++;
+        }
+
+        if (special.checked){
+            newPass += getSpecial();
+            count++;
+        }
     }
 
     showPass(newPass)
