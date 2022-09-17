@@ -59,7 +59,7 @@ function changeSize(action) {
     }
 }
 
-function checkIfChecked() {
+function isChecked() {
     if ((upper.checked) || (lower.checked) || (number.checked) || (special.checked)) {
         return true;
     } else {
@@ -71,7 +71,7 @@ function getPass() {
     let count = 0;
     let newPass = "";
 
-    if (checkIfChecked()) {
+    if (isChecked()) {
         while (count < parseInt(size.value)) {
             if (upper.checked) {
                 newPass += getUpper();
