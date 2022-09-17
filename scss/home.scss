@@ -5,7 +5,7 @@ body {
     align-items: center;
     justify-content: center;
     /* gradient */
-    background: rgb(238, 174, 202);
+    background: #eeaeca;
     background: radial-gradient(circle, #eeaeca 0%, #94bbe9 100%);
 
     #wrap {
@@ -15,11 +15,11 @@ body {
         border-radius: 10px;
         padding: 20px;
         background: #c5c5c51a;
-        border: 2px solid rgba(88, 88, 88, 0.452);
+        border: 2px solid #58585873;
         /* shadow */
-        -webkit-box-shadow: 8px 7px 10px -5px rgba(0, 0, 0, 0.75);
-        -moz-box-shadow: 8px 7px 10px -10px rgba(0, 0, 0, 0.75);
-        box-shadow: 8px 7px 30px -10px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: 8px 7px 10px -5px #000000bf;
+        -moz-box-shadow: 8px 7px 10px -10px #000000bf;
+        box-shadow: 8px 7px 30px -10px #000000bf;
         display: flex;
         flex-direction: column;
         align-items: space-around;
@@ -36,9 +36,9 @@ body {
         color: white;
         background: #313131;
         /* shadow */
-        -webkit-box-shadow: 8px 7px 10px -5px rgba(0, 0, 0, 0.75);
-        -moz-box-shadow: 8px 7px 10px -5px rgba(0, 0, 0, 0.75);
-        box-shadow: 8px 7px 10px -5px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: 8px 7px 10px -5px #000000bf;
+        -moz-box-shadow: 8px 7px 10px -10px #000000bf;
+        box-shadow: 8px 7px 30px -10px #000000bf;
     }
 
     #configs {
@@ -59,7 +59,7 @@ body {
 
                 button {
                     height: 50%;
-                    margin: 3px;
+                    margin: 1px;
                     background-color: #313131;
                     color: white;
                     font-size: 28px;
@@ -76,6 +76,7 @@ body {
 
             #input_size {
                 width: 80px;
+                margin: 1px;
                 font-size: 40px;
                 text-align: center;
                 background: #313131;
