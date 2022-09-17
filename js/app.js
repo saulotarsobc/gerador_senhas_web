@@ -33,7 +33,7 @@ function getNumber() {
 }
 
 function getSpecial() {
-    const special = "!@#$%¨&*()_+{}[]";
+    const special = "!@#$%<>&*()_+{}[]";
     return special[Math.floor(Math.random() * special.length)];
 }
 
@@ -59,33 +59,50 @@ function changeSize(action) {
     }
 }
 
+function checkIfChecked() {
+    if (
+        (upper.checked) ||
+        (lower.checked) ||
+        (number.checked) ||
+        (special.checked)
+    ) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 function getPass() {
     let count = 0;
     let newPass = "";
 
-    while (count < parseInt(size.value)) {
-        if (upper.checked){
-            newPass += getUpper();
-            count++;
-        }
+    if (checkIfChecked()) {
+        while (count < parseInt(size.value)) {
+            if (upper.checked) {
+                newPass += getUpper();
+                count++;
+            }
 
-        if (lower.checked){
-            newPass += getLower();
-            count++;
-        }
+            if (lower.checked) {
+                newPass += getLower();
+                count++;
+            }
 
-        if (number.checked){
-            newPass += getNumber();
-            count++;
-        }
+            if (number.checked) {
+                newPass += getNumber();
+                count++;
+            }
 
-        if (special.checked){
-            newPass += getSpecial();
-            count++;
+            if (special.checked) {
+                newPass += getSpecial();
+                count++;
+            }
         }
+        showPass(newPass);
+    } else{
+        upper.checked = true;
+        getPass();
     }
-
-    showPass(newPass)
 }
 
 
