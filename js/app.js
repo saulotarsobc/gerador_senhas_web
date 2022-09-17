@@ -60,12 +60,7 @@ function changeSize(action) {
 }
 
 function checkIfChecked() {
-    if (
-        (upper.checked) ||
-        (lower.checked) ||
-        (number.checked) ||
-        (special.checked)
-    ) {
+    if ((upper.checked) || (lower.checked) || (number.checked) || (special.checked)) {
         return true;
     } else {
         return false;
@@ -81,30 +76,33 @@ function getPass() {
             if (upper.checked) {
                 newPass += getUpper();
                 count++;
+                showPass(newPass);
             }
 
             if (lower.checked) {
                 newPass += getLower();
                 count++;
+                showPass(newPass);
             }
 
             if (number.checked) {
                 newPass += getNumber();
                 count++;
+                showPass(newPass);
             }
 
             if (special.checked) {
                 newPass += getSpecial();
                 count++;
+                showPass(newPass);
             }
         }
-        showPass(newPass);
-    } else{
+    } else {
         upper.checked = true;
         getPass();
     }
 }
 
 
-updateSize(8);
+updateSize(LESS_LIMIT);
 getPass();
