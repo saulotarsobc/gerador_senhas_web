@@ -8,7 +8,7 @@ const number = document.querySelector("#number");
 const special = document.querySelector("#special");
 
 const MORE_LIMIT = 22;
-const LESS_LIMIT = 22;
+const LESS_LIMIT = 8;
 
 function copyPass() {
     pass.select();
