@@ -8,7 +8,7 @@ const number = document.querySelector("#number");
 const special = document.querySelector("#special");
 
 const MORE_LIMIT = 22;
-const LESS_LIMIT = 8;
+const LESS_LIMIT = 22;
 
 function copyPass() {
     pass.select();
@@ -41,8 +41,8 @@ function updateSize(val) {
     input_size.value = val;
 }
 
-function showPass(newPass) {
-    pass.value = newPass;
+function cleanPass() {
+    pass.innerHTML = '';
 }
 
 function changeSize(action) {
@@ -67,37 +67,49 @@ function isChecked() {
     }
 }
 
+function showPass(newPassObj) {
+    newPassObj.forEach(el => {
+        pass.innerHTML += el;
+        console.log(el);
+    });
+}
+
 function getPass() {
     let count = 0;
-    let newPass = "";
+    cleanPass();
+
+    let newPassObj = [];
 
     if (isChecked()) {
+        console.log('checked');
+
         while (count < parseInt(size.value)) {
             if (upper.checked) {
-                newPass += getUpper();
+                newPassObj.push(getUpper());
+                // newPassObj.push(123);
                 count++;
-                showPass(newPass);
             }
 
             if (lower.checked) {
-                newPass += getLower();
+                newPassObj.push(getLower());
                 count++;
-                showPass(newPass);
             }
 
             if (number.checked) {
-                newPass += getNumber();
+                newPassObj.push(getNumber());
                 count++;
-                showPass(newPass);
             }
 
             if (special.checked) {
-                newPass += getSpecial();
+                newPassObj.push(getSpecial());
                 count++;
-                showPass(newPass);
             }
         }
+
+        showPass(newPassObj);
+
     } else {
+        // console.log('not checked');
         upper.checked = true;
         getPass();
     }
