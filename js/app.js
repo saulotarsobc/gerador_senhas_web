@@ -7,7 +7,7 @@ const lower = document.querySelector("#lower");
 const number = document.querySelector("#number");
 const special = document.querySelector("#special");
 
-const MORE_LIMIT = 22;
+const MORE_LIMIT = 24;
 const LESS_LIMIT = 8;
 
 function copyPass() {
@@ -66,12 +66,16 @@ function isChecked() {
 };
 
 function shuffleArray(newPassObj) {
-    return newPassObj.sort(/* () => Math.random() - 0.5 */);
+    return newPassObj.sort(() => Math.random() - 0.5);
 };
 
 function showPass(newPassObj) {
-    shuffleArray(newPassObj).forEach(el => {
-        pass.innerHTML += el;
+    cleanPass();
+    shuffleArray(newPassObj).forEach((el, i) => {
+        setTimeout(() => {
+            console.log(el);
+            pass.innerHTML += el;
+        }, (38 * i))
     });
 };
 

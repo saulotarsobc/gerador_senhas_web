@@ -1,6 +1,8 @@
-# gerador_senhas
+# GERADOR DE SENHAS
 
-## Referências
+![banner](img/banner.png)
 
-[Randomize ou Baralhe um Array em JavaScript](https://www.delftstack.com/pt/howto/javascript/shuffle-array-javascript/)
-[Efeito de Máquina de Escrever com JavaScript - Origamid](https://youtu.be/zx2axQoY_YM)
+## REFERÊNCIAS
+
+- [Randomize ou Baralhe um Array em JavaScript](https://www.delftstack.com/pt/howto/javascript/shuffle-array-javascript/)
+- [Efeito de Máquina de Escrever com JavaScript - Origamid](https://youtu.be/zx2axQoY_YM)
