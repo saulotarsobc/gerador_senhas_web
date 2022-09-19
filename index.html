@@ -28,9 +28,9 @@
             <div id="configs">
                 <div id="size">
                     <div id="controls">
-                        <button onclick="changeSize('more')" id="more"
+                        <button onclick="changeSize('more'), playKeySound()" id="more"
                             data-message="aumentar a quantidade de caracteres da senha" tabindex="0">+</button>
-                        <button onclick="changeSize('less')" id="less"
+                        <button onclick="changeSize('less'), playKeySound()" id="less"
                             data-message="diminuir a quantidade de caracteres da senha" tabindex="0">-</button>
                     </div>
 
@@ -39,30 +39,30 @@
 
                 <div id="types">
                     <div class="wrap_type">
-                        <input type="checkbox" class="type" id="upper" aria-checked="true" aria-label="Maiúscula">
+                        <input onclick="playKeySound()" type="checkbox" class="type" id="upper" aria-checked="true" aria-label="Maiúscula">
                         <label for="upper">Maiúscula</label>
                     </div>
 
                     <div class="wrap_type">
-                        <input type="checkbox" class="type" id="lower" aria-checked="true" aria-label="Minúscula">
+                        <input onclick="playKeySound()" type="checkbox" class="type" id="lower" aria-checked="true" aria-label="Minúscula">
                         <label for="lower">Minúscula</label>
                     </div>
 
                     <div class="wrap_type">
-                        <input type="checkbox" class="type" id="number" aria-checked="false" aria-label="Números">
+                        <input onclick="playKeySound()" type="checkbox" class="type" id="number" aria-checked="false" aria-label="Números">
                         <label for="number">Números</label>
                     </div>
 
                     <div class="wrap_type">
-                        <input type="checkbox" class="type" id="special" aria-checked="false" aria-label="Especiais">
+                        <input onclick="playKeySound()" type="checkbox" class="type" id="special" aria-checked="false" aria-label="Especiais">
                         <label for="special">Especiais</label>
                     </div>
                 </div>
             </div>
 
             <div id="btns">
-                <button class="btn" id="gerar" onclick="getPass()">Gerar Senha</button>
-                <button class="btn" id="copiar" onclick="copyPass()">Copiar</button>
+                <button class="btn" id="gerar" onclick="getPass(), playKeySound()">Gerar Senha</button>
+                <button class="btn" id="copiar" onclick="copyPass(), playKeySound()">Copiar</button>
             </div>
         </div>
     </main>

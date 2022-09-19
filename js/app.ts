@@ -18,7 +18,6 @@ function playKeySound() {
 }
 
 function copyPass() {
-    playKeySound()
     navigator.clipboard.writeText(pass.innerHTML);
     alert("Senha copiada: " + (pass.innerHTML));
 };
@@ -52,7 +51,6 @@ function cleanPass() {
 };
 
 function changeSize(action: string) {
-    playKeySound();
     let atualSize = parseInt(size.value);
 
     if (action == "more") {
