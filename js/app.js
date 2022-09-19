@@ -11,26 +11,26 @@ const MORE_LIMIT = 22;
 const LESS_LIMIT = 8;
 
 function copyPass() {
-    pass.select();
-    pass.setSelectionRange(0, 99999);
-    navigator.clipboard.writeText(pass.value);
-    alert("Senha copiada: " + pass.value);
-}
+    // pass.select();
+    // pass.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(pass.innerHTML);
+    alert("Senha copiada: " + (pass.innerHTML));
+};
 
 function getUpper() {
     const upper = "ABCDEFGHIJCLMNOPQRSTUVXYZ";
     return upper[Math.floor(Math.random() * upper.length)];
-}
+};
 
 function getLower() {
     const lower = "abcdefghijklmnopqrstuvxyz";
     return lower[Math.floor(Math.random() * lower.length)];
-}
+};
 
 function getNumber() {
     const number = "1234567890";
     return number[Math.floor(Math.random() * number.length)];
-}
+};
 
 function getSpecial() {
     const special = "!@#$%<>&*()_+{}[]";
@@ -39,11 +39,11 @@ function getSpecial() {
 
 function updateSize(val) {
     input_size.value = val;
-}
+};
 
 function cleanPass() {
     pass.innerHTML = '';
-}
+};
 
 function changeSize(action) {
     let atualSize = parseInt(size.value);
@@ -57,7 +57,7 @@ function changeSize(action) {
             updateSize(atualSize - 1);
         }
     }
-}
+};
 
 function isChecked() {
     if ((upper.checked) || (lower.checked) || (number.checked) || (special.checked)) {
@@ -65,15 +65,14 @@ function isChecked() {
     } else {
         return false;
     }
-}
+};
 
 function shuffleArray(newPassObj) {
     return newPassObj.sort(() => Math.random() - 0.5);
-}
+};
 
 function showPass(newPassObj) {
-    newPassObj = shuffleArray(newPassObj);
-    newPassObj.forEach(el => {
+    shuffleArray(newPassObj).forEach(el => {
         pass.innerHTML += el;
     });
 };
@@ -115,8 +114,7 @@ function getPass() {
         number.checked = true;
         getPass();
     }
-}
-
+};
 
 updateSize(LESS_LIMIT);
 getPass();
