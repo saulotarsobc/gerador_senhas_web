@@ -7,14 +7,13 @@ const lower = document.querySelector("#lower");
 const number = document.querySelector("#number");
 const special = document.querySelector("#special");
 
-const MORE_LIMIT = 24;
+const MORE_LIMIT = 28;
 const LESS_LIMIT = 8;
-const INTERVAL = 38;
+const INTERVAL = 20;
 
 function playKeySound() {
     const key_sound = new Audio('./sounds/key_sound.wav');
     key_sound.play();
-    key_sound.remove;
 }
 
 function copyPass() {
@@ -79,10 +78,7 @@ function shuffleArray(newPass: object) {
 function showPass(newPass: object) {
     cleanPass();
     shuffleArray(newPass).forEach((el: string, i: number) => {
-        setTimeout(() => {
-            // playKeySound();
-            pass.innerHTML += el;
-        }, (INTERVAL * i));
+        setTimeout(() => { pass.innerHTML += el; }, (INTERVAL * i));
     });
 };
 
@@ -126,3 +122,4 @@ function getPass() {
 };
 
 updateSize(LESS_LIMIT);
+getPass();

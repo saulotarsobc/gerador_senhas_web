@@ -6,13 +6,12 @@ var upper = document.querySelector("#upper");
 var lower = document.querySelector("#lower");
 var number = document.querySelector("#number");
 var special = document.querySelector("#special");
-var MORE_LIMIT = 24;
+var MORE_LIMIT = 28;
 var LESS_LIMIT = 8;
-var INTERVAL = 38;
+var INTERVAL = 20;
 function playKeySound() {
     var key_sound = new Audio('./sounds/key_sound.wav');
     key_sound.play();
-    key_sound.remove;
 }
 function copyPass() {
     navigator.clipboard.writeText(pass.innerHTML);
@@ -76,10 +75,7 @@ function shuffleArray(newPass) {
 function showPass(newPass) {
     cleanPass();
     shuffleArray(newPass).forEach(function (el, i) {
-        setTimeout(function () {
-            // playKeySound();
-            pass.innerHTML += el;
-        }, (INTERVAL * i));
+        setTimeout(function () { pass.innerHTML += el; }, (INTERVAL * i));
     });
 }
 ;
@@ -116,3 +112,4 @@ function getPass() {
 }
 ;
 updateSize(LESS_LIMIT);
+getPass();
