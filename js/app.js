@@ -68,6 +68,7 @@ function isChecked() {
 }
 
 function showPass(newPassObj) {
+    // newPassObj = newPassObj.shufle();
     newPassObj.forEach(el => {
         pass.innerHTML += el;
     });
@@ -84,7 +85,6 @@ function getPass() {
         while (count < parseInt(size.value)) {
             if (upper.checked && (count < parseInt(size.value))) {
                 newPassObj.push(getUpper());
-                // newPassObj.push(123);
                 count++;
             }
 
@@ -107,8 +107,8 @@ function getPass() {
         showPass(newPassObj);
 
     } else {
-        // console.log('not checked');
         upper.checked = true;
+        lower.checked = true;
         getPass();
     }
 }
