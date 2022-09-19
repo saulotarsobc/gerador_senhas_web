@@ -1,5 +1,5 @@
 const size = document.querySelector("#input_size");
-const pass = document.querySelector("#pass");
+let pass = document.querySelector("#pass");
 const input_size = document.querySelector("#input_size");
 
 const upper = document.querySelector("#upper");
@@ -14,6 +14,7 @@ const INTERVAL = 100;
 function playKeySound() {
     const key_sound = new Audio('./sounds/key_sound.wav');
     key_sound.play();
+    key_sound.remove;
 }
 
 function copyPass() {
@@ -79,7 +80,7 @@ function shuffleArray(newPass: object) {
 
 function showPass(newPass: object) {
     cleanPass();
-    shuffleArray(newPass).forEach((el, i) => {
+    shuffleArray(newPass).forEach((el: string, i: BigInteger) => {
         setTimeout(() => {
             playKeySound();
             pass.innerHTML += el;
@@ -128,4 +129,4 @@ function getPass() {
 };
 
 updateSize(LESS_LIMIT);
-getPass();
+// getPass();

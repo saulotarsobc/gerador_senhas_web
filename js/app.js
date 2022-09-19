@@ -1,17 +1,18 @@
 "use strict";
-const size = document.querySelector("#input_size");
-const pass = document.querySelector("#pass");
-const input_size = document.querySelector("#input_size");
-const upper = document.querySelector("#upper");
-const lower = document.querySelector("#lower");
-const number = document.querySelector("#number");
-const special = document.querySelector("#special");
-const MORE_LIMIT = 24;
-const LESS_LIMIT = 8;
-const INTERVAL = 100;
+var size = document.querySelector("#input_size");
+var pass = document.querySelector("#pass");
+var input_size = document.querySelector("#input_size");
+var upper = document.querySelector("#upper");
+var lower = document.querySelector("#lower");
+var number = document.querySelector("#number");
+var special = document.querySelector("#special");
+var MORE_LIMIT = 24;
+var LESS_LIMIT = 8;
+var INTERVAL = 100;
 function playKeySound() {
-    const key_sound = new Audio('./sounds/key_sound.wav');
+    var key_sound = new Audio('./sounds/key_sound.wav');
     key_sound.play();
+    key_sound.remove;
 }
 function copyPass() {
     playKeySound();
@@ -20,22 +21,22 @@ function copyPass() {
 }
 ;
 function getUpper() {
-    const upper = "ABCDEFGHIJCLMNOPQRSTUVXYZ";
+    var upper = "ABCDEFGHIJCLMNOPQRSTUVXYZ";
     return upper[Math.floor(Math.random() * upper.length)];
 }
 ;
 function getLower() {
-    const lower = "abcdefghijklmnopqrstuvxyz";
+    var lower = "abcdefghijklmnopqrstuvxyz";
     return lower[Math.floor(Math.random() * lower.length)];
 }
 ;
 function getNumber() {
-    const number = "1234567890";
+    var number = "1234567890";
     return number[Math.floor(Math.random() * number.length)];
 }
 ;
 function getSpecial() {
-    const special = "!@#$%<>&*()_+{}[]";
+    var special = "!@#$%<>&*()_+{}[]";
     return special[Math.floor(Math.random() * special.length)];
 }
 function updateSize(val) {
@@ -48,7 +49,7 @@ function cleanPass() {
 ;
 function changeSize(action) {
     playKeySound();
-    let atualSize = parseInt(size.value);
+    var atualSize = parseInt(size.value);
     if (action == "more") {
         if (atualSize < MORE_LIMIT) {
             updateSize(atualSize + 1);
@@ -71,13 +72,13 @@ function isChecked() {
 }
 ;
 function shuffleArray(newPass) {
-    return newPass.sort(() => Math.random() - 0.5);
+    return newPass.sort(function () { return Math.random() - 0.5; });
 }
 ;
 function showPass(newPass) {
     cleanPass();
-    shuffleArray(newPass).forEach((el, i) => {
-        setTimeout(() => {
+    shuffleArray(newPass).forEach(function (el, i) {
+        setTimeout(function () {
             playKeySound();
             pass.innerHTML += el;
         }, (INTERVAL * i));
@@ -86,9 +87,9 @@ function showPass(newPass) {
 ;
 function getPass() {
     // playKeySound();
-    let count = 0;
+    var count = 0;
     cleanPass();
-    let newPass = [];
+    var newPass = [];
     if (isChecked()) {
         while (count < parseInt(size.value)) {
             if (upper.checked && (count < parseInt(size.value))) {
@@ -118,4 +119,4 @@ function getPass() {
 }
 ;
 updateSize(LESS_LIMIT);
-getPass();
+// getPass();
