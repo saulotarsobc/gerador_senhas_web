@@ -8,9 +8,9 @@ const number = document.querySelector("#number") as HTMLInputElement;
 const special = document.querySelector("#special") as HTMLInputElement;
 const gerar = document.querySelector("#gerar") as HTMLInputElement;
 
-let MORE_LIMIT: number = 24;
-let LESS_LIMIT: number = 8;
-let INTERVAL: number = 20;
+const MORE_LIMIT: number = 24;
+const LESS_LIMIT: number = 8;
+const INTERVAL: number = 22;
 
 function playKeySound() {
     let key_sound = new Audio('./sounds/key_sound.wav');
@@ -84,16 +84,13 @@ function shuffleArray(newPass: any) {
 function showPass(newPass: any) {
     cleanPass();
     shuffleArray(newPass).forEach((el: string, i: number) => {
-        setTimeout(() => {
-            pass.innerHTML += el;
-        }, (INTERVAL * i));
+        setTimeout(() => { pass.innerHTML += el; }, (INTERVAL * i));
     });
 }
 
 function getPass() {
     let count = 0;
     cleanPass();
-    gerar.disabled = true;
 
     let newPass = [];
 
@@ -122,7 +119,6 @@ function getPass() {
         }
 
         showPass(newPass);
-        gerar.disabled = false;
 
     } else {
         upper.checked = true;

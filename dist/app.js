@@ -7,9 +7,9 @@ const lower = document.querySelector("#lower");
 const number = document.querySelector("#number");
 const special = document.querySelector("#special");
 const gerar = document.querySelector("#gerar");
-let MORE_LIMIT = 24;
-let LESS_LIMIT = 8;
-let INTERVAL = 20;
+const MORE_LIMIT = 24;
+const LESS_LIMIT = 8;
+const INTERVAL = 22;
 function playKeySound() {
     let key_sound = new Audio('./sounds/key_sound.wav');
     key_sound.play();
@@ -70,15 +70,12 @@ function shuffleArray(newPass) {
 function showPass(newPass) {
     cleanPass();
     shuffleArray(newPass).forEach((el, i) => {
-        setTimeout(() => {
-            pass.innerHTML += el;
-        }, (INTERVAL * i));
+        setTimeout(() => { pass.innerHTML += el; }, (INTERVAL * i));
     });
 }
 function getPass() {
     let count = 0;
     cleanPass();
-    gerar.disabled = true;
     let newPass = [];
     if (isChecked()) {
         while (count < parseInt(size.value)) {
@@ -100,7 +97,6 @@ function getPass() {
             }
         }
         showPass(newPass);
-        gerar.disabled = false;
     }
     else {
         upper.checked = true;
