@@ -70,7 +70,6 @@ function isChecked() {
 function showPass(newPassObj) {
     newPassObj.forEach(el => {
         pass.innerHTML += el;
-        console.log(el);
     });
 }
 
@@ -81,26 +80,25 @@ function getPass() {
     let newPassObj = [];
 
     if (isChecked()) {
-        console.log('checked');
 
         while (count < parseInt(size.value)) {
-            if (upper.checked) {
+            if (upper.checked && (count < parseInt(size.value))) {
                 newPassObj.push(getUpper());
                 // newPassObj.push(123);
                 count++;
             }
 
-            if (lower.checked) {
+            if (lower.checked && (count < parseInt(size.value))) {
                 newPassObj.push(getLower());
                 count++;
             }
 
-            if (number.checked) {
+            if (number.checked && (count < parseInt(size.value))) {
                 newPassObj.push(getNumber());
                 count++;
             }
 
-            if (special.checked) {
+            if (special.checked && (count < parseInt(size.value))) {
                 newPassObj.push(getSpecial());
                 count++;
             }
