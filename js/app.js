@@ -74,7 +74,6 @@ function showPass(newPassObj) {
     cleanPass();
     shuffleArray(newPassObj).forEach((el, i) => {
         setTimeout(() => {
-            console.log(el);
             pass.innerHTML += el;
         }, (INTERVAL * i))
     });
