@@ -80,9 +80,9 @@ function shuffleArray(newPass: object) {
 
 function showPass(newPass: object) {
     cleanPass();
-    shuffleArray(newPass).forEach((el: string, i: BigInteger) => {
+    shuffleArray(newPass).forEach((el: string, i: number) => {
         setTimeout(() => {
-            playKeySound();
+            // playKeySound();
             pass.innerHTML += el;
         }, (INTERVAL * i));
     });

@@ -79,7 +79,7 @@ function showPass(newPass) {
     cleanPass();
     shuffleArray(newPass).forEach(function (el, i) {
         setTimeout(function () {
-            playKeySound();
+            // playKeySound();
             pass.innerHTML += el;
         }, (INTERVAL * i));
     });
