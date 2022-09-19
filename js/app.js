@@ -8,7 +8,7 @@ var number = document.querySelector("#number");
 var special = document.querySelector("#special");
 var MORE_LIMIT = 24;
 var LESS_LIMIT = 8;
-var INTERVAL = 100;
+var INTERVAL = 38;
 function playKeySound() {
     var key_sound = new Audio('./sounds/key_sound.wav');
     key_sound.play();
@@ -111,10 +111,8 @@ function getPass() {
     }
     else {
         upper.checked = true;
-        number.checked = true;
         getPass();
     }
 }
 ;
 updateSize(LESS_LIMIT);
-// getPass();

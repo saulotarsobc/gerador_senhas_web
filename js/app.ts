@@ -9,7 +9,7 @@ const special = document.querySelector("#special");
 
 const MORE_LIMIT = 24;
 const LESS_LIMIT = 8;
-const INTERVAL = 100;
+const INTERVAL = 38;
 
 function playKeySound() {
     const key_sound = new Audio('./sounds/key_sound.wav');
@@ -121,10 +121,8 @@ function getPass() {
 
     } else {
         upper.checked = true;
-        number.checked = true;
         getPass();
     }
 };
 
 updateSize(LESS_LIMIT);
-// getPass();
