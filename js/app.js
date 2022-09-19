@@ -67,12 +67,16 @@ function isChecked() {
     }
 }
 
+function shuffleArray(newPassObj) {
+    return newPassObj.sort(() => Math.random() - 0.5);
+}
+
 function showPass(newPassObj) {
-    // newPassObj = newPassObj.shufle();
+    newPassObj = shuffleArray(newPassObj);
     newPassObj.forEach(el => {
         pass.innerHTML += el;
     });
-}
+};
 
 function getPass() {
     let count = 0;
@@ -108,7 +112,7 @@ function getPass() {
 
     } else {
         upper.checked = true;
-        lower.checked = true;
+        number.checked = true;
         getPass();
     }
 }
