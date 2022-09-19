@@ -1,91 +1,99 @@
-const size = document.querySelector("#input_size");
-let pass = document.querySelector("#pass");
-const input_size = document.querySelector("#input_size");
+let size = document.querySelector("#input_size") as HTMLInputElement;
+let pass = document.querySelector("#pass") as HTMLParagraphElement;
+let input_size = document.querySelector("#input_size") as HTMLInputElement;
 
-const upper = document.querySelector("#upper");
-const lower = document.querySelector("#lower");
-const number = document.querySelector("#number");
-const special = document.querySelector("#special");
+const upper = document.querySelector("#upper") as HTMLInputElement;
+const lower = document.querySelector("#lower") as HTMLInputElement;
+const number = document.querySelector("#number") as HTMLInputElement;
+const special = document.querySelector("#special") as HTMLInputElement;
+const gerar = document.querySelector("#gerar") as HTMLInputElement;
 
-const MORE_LIMIT = 28;
-const LESS_LIMIT = 8;
-const INTERVAL = 20;
+let MORE_LIMIT: number = 24;
+let LESS_LIMIT: number = 8;
+let INTERVAL: number = 20;
 
 function playKeySound() {
-    const key_sound = new Audio('./sounds/key_sound.wav');
+    let key_sound = new Audio('./sounds/key_sound.wav');
     key_sound.play();
 }
 
 function copyPass() {
     navigator.clipboard.writeText(pass.innerHTML);
     alert("Senha copiada: " + (pass.innerHTML));
-};
+}
 
-function getUpper() {
-    const upper = "ABCDEFGHIJCLMNOPQRSTUVXYZ";
+function getUpper(): string {
+    const upper: string = "ABCDEFGHIJCLMNOPQRSTUVXYZ";
     return upper[Math.floor(Math.random() * upper.length)];
-};
+}
 
-function getLower() {
-    const lower = "abcdefghijklmnopqrstuvxyz";
+function getLower(): string {
+    const lower: string = "abcdefghijklmnopqrstuvxyz";
     return lower[Math.floor(Math.random() * lower.length)];
-};
+}
 
-function getNumber() {
-    const number = "1234567890";
+function getNumber(): string {
+    const number: string = "1234567890";
     return number[Math.floor(Math.random() * number.length)];
-};
+}
 
-function getSpecial() {
-    const special = "!@#$%<>&*()_+{}[]";
+function getSpecial(): string {
+    const special: string = "!@#$%<>&*()_+{}[]";
     return special[Math.floor(Math.random() * special.length)];
 }
 
-function updateSize(val: number) {
+function updateSize(val: any) {
     input_size.value = val;
-};
+}
 
 function cleanPass() {
     pass.innerHTML = '';
-};
+}
 
-function changeSize(action: string) {
-    let atualSize = parseInt(size.value);
+function changeSize(action: any) {
+    let currentSize = parseInt(size.value);
 
     if (action == "more") {
-        if (atualSize < MORE_LIMIT) {
-            updateSize(atualSize + 1);
+        if (currentSize < MORE_LIMIT) {
+            updateSize(currentSize + 1);
         }
     } else {
-        if (atualSize > LESS_LIMIT) {
-            updateSize(atualSize - 1);
+        if (currentSize > LESS_LIMIT) {
+            updateSize(currentSize - 1);
         }
     }
-};
+}
 
 function isChecked() {
-    if ((upper.checked) || (lower.checked) || (number.checked) || (special.checked)) {
+    if (
+        upper.checked ||
+        lower.checked ||
+        number.checked ||
+        special.checked
+    ) {
         return true;
     } else {
         return false;
     }
-};
+}
 
-function shuffleArray(newPass: object) {
+function shuffleArray(newPass: any) {
     return newPass.sort(() => Math.random() - 0.5);
-};
+}
 
-function showPass(newPass: object) {
+function showPass(newPass: any) {
     cleanPass();
     shuffleArray(newPass).forEach((el: string, i: number) => {
-        setTimeout(() => { pass.innerHTML += el; }, (INTERVAL * i));
+        setTimeout(() => {
+            pass.innerHTML += el;
+        }, (INTERVAL * i));
     });
-};
+}
 
 function getPass() {
-    // playKeySound();
     let count = 0;
     cleanPass();
+    gerar.disabled = true;
 
     let newPass = [];
 
@@ -119,7 +127,7 @@ function getPass() {
         upper.checked = true;
         getPass();
     }
-};
+    gerar.disabled = true;
+}
 
 updateSize(LESS_LIMIT);
-getPass();
