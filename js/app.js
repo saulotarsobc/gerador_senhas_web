@@ -9,7 +9,7 @@ const special = document.querySelector("#special");
 
 const MORE_LIMIT = 24;
 const LESS_LIMIT = 8;
-const INTERVAL = 38;
+const INTERVAL = 80;
 
 function copyPass() {
     navigator.clipboard.writeText(pass.innerHTML);
@@ -73,9 +73,7 @@ function shuffleArray(newPassObj) {
 function showPass(newPassObj) {
     cleanPass();
     shuffleArray(newPassObj).forEach((el, i) => {
-        setTimeout(() => {
-            pass.innerHTML += el;
-        }, (INTERVAL * i))
+        setTimeout(() => { pass.innerHTML += el; }, (INTERVAL * i));
     });
 };
 
