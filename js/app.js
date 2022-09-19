@@ -9,6 +9,7 @@ const special = document.querySelector("#special");
 
 const MORE_LIMIT = 24;
 const LESS_LIMIT = 8;
+const INTERVAL = 38;
 
 function copyPass() {
     navigator.clipboard.writeText(pass.innerHTML);
@@ -75,7 +76,7 @@ function showPass(newPassObj) {
         setTimeout(() => {
             console.log(el);
             pass.innerHTML += el;
-        }, (38 * i))
+        }, (INTERVAL * i))
     });
 };
 
