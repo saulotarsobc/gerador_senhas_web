@@ -11,8 +11,6 @@ const MORE_LIMIT = 22;
 const LESS_LIMIT = 8;
 
 function copyPass() {
-    // pass.select();
-    // pass.setSelectionRange(0, 99999);
     navigator.clipboard.writeText(pass.innerHTML);
     alert("Senha copiada: " + (pass.innerHTML));
 };
@@ -68,7 +66,7 @@ function isChecked() {
 };
 
 function shuffleArray(newPassObj) {
-    return newPassObj.sort(() => Math.random() - 0.5);
+    return newPassObj.sort(/* () => Math.random() - 0.5 */);
 };
 
 function showPass(newPassObj) {
