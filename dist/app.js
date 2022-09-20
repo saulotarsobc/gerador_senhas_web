@@ -138,7 +138,6 @@ function updateSecurityLevel() {
         security_level_bar.style.background = "#4fff5e";
         security_level = 100;
     }
-    console.log(security_level);
     security_level_bar.style.width = security_level + "%";
 }
 updateSecurityLevel();

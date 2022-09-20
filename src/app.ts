@@ -172,7 +172,6 @@ function updateSecurityLevel() {
         security_level = 100;
     }
 
-    console.log(security_level);
     security_level_bar.style.width = security_level + "%";
 }
 
