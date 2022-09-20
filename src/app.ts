@@ -7,6 +7,7 @@ const lower = document.querySelector("#lower") as HTMLInputElement;
 const number = document.querySelector("#number") as HTMLInputElement;
 const special = document.querySelector("#special") as HTMLInputElement;
 const gerar = document.querySelector("#gerar") as HTMLInputElement;
+const security_level_bar = document.querySelector("#security_level_bar") as HTMLInputElement;
 
 const MORE_LIMIT: number = 24;
 const LESS_LIMIT: number = 8;
@@ -119,11 +120,56 @@ function getPass() {
         }
 
         showPass(newPass);
+        updateSecurityLevel();
 
     } else {
         upper.checked = true;
         getPass();
     }
 }
+
+function updateSecurityLevel() {
+    let security_level = 12 + (parseInt(input_size.value) * 2);
+
+    // console.log(parseInt(input_size.value));
+    // console.log(security_level);
+
+    if (upper.checked) {
+        security_level = security_level + 11;
+    }
+
+    if (lower.checked) {
+        security_level = security_level + 11;
+    }
+
+    if (number.checked) {
+        security_level = security_level + 11;
+    }
+
+    if (special.checked) {
+        security_level = security_level + 11;
+    }
+
+    if (
+        (upper.checked == false) &&
+        (lower.checked == false) &&
+        (number.checked == true) &&
+        (special.checked == false) &&
+        (parseInt(input_size.value) < 12)
+    ) {
+        security_level = 10 + parseInt(input_size.value);
+        console.log('aki')
+    }
+
+    if (security_level >= 88) {
+        security_level = 100;
+    }
+
+    console.log(security_level);
+
+    security_level_bar.style.width = security_level + "%";
+}
+
+updateSecurityLevel();
 
 updateSize(LESS_LIMIT);

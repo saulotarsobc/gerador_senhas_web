@@ -7,6 +7,7 @@ const lower = document.querySelector("#lower");
 const number = document.querySelector("#number");
 const special = document.querySelector("#special");
 const gerar = document.querySelector("#gerar");
+const security_level_bar = document.querySelector("#security_level_bar");
 const MORE_LIMIT = 24;
 const LESS_LIMIT = 8;
 const INTERVAL = 22;
@@ -97,10 +98,42 @@ function getPass() {
             }
         }
         showPass(newPass);
+        updateSecurityLevel();
     }
     else {
         upper.checked = true;
         getPass();
     }
 }
+function updateSecurityLevel() {
+    let security_level = 12 + (parseInt(input_size.value) * 2);
+    // console.log(parseInt(input_size.value));
+    // console.log(security_level);
+    if (upper.checked) {
+        security_level = security_level + 11;
+    }
+    if (lower.checked) {
+        security_level = security_level + 11;
+    }
+    if (number.checked) {
+        security_level = security_level + 11;
+    }
+    if (special.checked) {
+        security_level = security_level + 11;
+    }
+    if ((upper.checked == false) &&
+        (lower.checked == false) &&
+        (number.checked == true) &&
+        (special.checked == false) &&
+        (parseInt(input_size.value) < 12)) {
+        security_level = 10 + parseInt(input_size.value);
+        console.log('aki');
+    }
+    if (security_level >= 88) {
+        security_level = 100;
+    }
+    console.log(security_level);
+    security_level_bar.style.width = security_level + "%";
+}
+updateSecurityLevel();
 updateSize(LESS_LIMIT);
