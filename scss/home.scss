@@ -36,8 +36,8 @@ body {
         -webkit-box-shadow: 8px 7px 10px -5px #000000bf;
         -moz-box-shadow: 8px 7px 10px -10px #000000bf;
         box-shadow: 8px 7px 30px -10px #000000bf;
-        position: relative;
 
+        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -78,15 +78,17 @@ body {
             width: 100%;
             transform: translate(-10px, 45px);
             overflow: hidden;
-            
+
             #security_level_bar {
                 -webkit-transition: all 700ms;
                 -moz-transition: all 700ms;
                 -o-transition: all 700ms;
                 transition: all 700ms;
                 height: 100%;
-                // width: 50%;
-                background: red;
+                /* shadow */
+                -webkit-box-shadow: 8px 7px 10px -5px #000000bf;
+                -moz-box-shadow: 8px 7px 10px -10px #000000bf;
+                box-shadow: 8px 7px 30px -10px #000000bf;
             }
         }
     }

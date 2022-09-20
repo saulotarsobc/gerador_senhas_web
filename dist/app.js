@@ -107,8 +107,7 @@ function getPass() {
 }
 function updateSecurityLevel() {
     let security_level = 12 + (parseInt(input_size.value) * 2);
-    // console.log(parseInt(input_size.value));
-    // console.log(security_level);
+    security_level_bar.style.background = "#ff4d4d";
     if (upper.checked) {
         security_level = security_level + 11;
     }
@@ -129,7 +128,14 @@ function updateSecurityLevel() {
         security_level = 10 + parseInt(input_size.value);
         console.log('aki');
     }
+    if (security_level >= 40) {
+        security_level_bar.style.background = "#ff933b";
+    }
+    if (security_level >= 51) {
+        security_level_bar.style.background = "#edff4f";
+    }
     if (security_level >= 88) {
+        security_level_bar.style.background = "#4fff5e";
         security_level = 100;
     }
     console.log(security_level);
