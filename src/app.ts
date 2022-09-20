@@ -1,6 +1,6 @@
-let size = document.querySelector("#input_size") as HTMLInputElement;
-let pass = document.querySelector("#pass") as HTMLParagraphElement;
-let input_size = document.querySelector("#input_size") as HTMLInputElement;
+const size = document.querySelector("#input_size") as HTMLInputElement;
+const pass = document.querySelector("#pass") as HTMLParagraphElement;
+const input_size = document.querySelector("#input_size") as HTMLInputElement;
 
 const upper = document.querySelector("#upper") as HTMLInputElement;
 const lower = document.querySelector("#lower") as HTMLInputElement;
@@ -51,7 +51,7 @@ function cleanPass() {
 }
 
 function changeSize(action: any) {
-    let currentSize = parseInt(size.value);
+    const currentSize = parseInt(size.value);
 
     if (action == "more") {
         if (currentSize < MORE_LIMIT) {

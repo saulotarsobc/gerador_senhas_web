@@ -33,9 +33,9 @@
             <div id="configs">
                 <div id="size">
                     <div id="controls">
-                        <button onclick="changeSize('more'), playKeySound()" id="more"
+                        <button aria-keyshortcuts="+" onclick="changeSize('more'), playKeySound()" id="more"
                             data-message="aumentar a quantidade de caracteres da senha" tabindex="0">+</button>
-                        <button onclick="changeSize('less'), playKeySound()" id="less"
+                        <button aria-keyshortcuts="-" onclick="changeSize('less'), playKeySound()" id="less"
                             data-message="diminuir a quantidade de caracteres da senha" tabindex="0">-</button>
                     </div>
 
@@ -44,26 +44,26 @@
 
                 <div id="types">
                     <div class="wrap_type">
-                        <input onclick="playKeySound()" checked type="checkbox" class="type" id="upper"
-                            aria-checked="true" aria-label="Maiúscula">
+                        <input aria-keyshortcuts="q" onclick="playKeySound()" checked type="checkbox" class="type"
+                            id="upper" aria-checked="true" aria-label="Maiúscula">
                         <label for="upper">Maiúscula</label>
                     </div>
 
                     <div class="wrap_type">
-                        <input onclick="playKeySound()" checked type="checkbox" class="type" id="lower"
-                            aria-checked="true" aria-label="Minúscula">
+                        <input aria-keyshortcuts="w" onclick="playKeySound()" checked type="checkbox" class="type"
+                            id="lower" aria-checked="true" aria-label="Minúscula">
                         <label for="lower">Minúscula</label>
                     </div>
 
                     <div class="wrap_type">
-                        <input onclick="playKeySound()" checked type="checkbox" class="type" id="number"
-                            aria-checked="false" aria-label="Números">
+                        <input aria-keyshortcuts="e" onclick="playKeySound()" checked type="checkbox" class="type"
+                            id="number" aria-checked="false" aria-label="Números">
                         <label for="number">Números</label>
                     </div>
 
                     <div class="wrap_type">
-                        <input onclick="playKeySound()" type="checkbox" class="type" id="special" aria-checked="false"
-                            aria-label="Especiais">
+                        <input aria-keyshortcuts="r" onclick="playKeySound()" type="checkbox" class="type" id="special"
+                            aria-checked="false" aria-label="Especiais">
                         <label for="special">Especiais</label>
                     </div>
                 </div>

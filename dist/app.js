@@ -1,7 +1,7 @@
 "use strict";
-let size = document.querySelector("#input_size");
-let pass = document.querySelector("#pass");
-let input_size = document.querySelector("#input_size");
+const size = document.querySelector("#input_size");
+const pass = document.querySelector("#pass");
+const input_size = document.querySelector("#input_size");
 const upper = document.querySelector("#upper");
 const lower = document.querySelector("#lower");
 const number = document.querySelector("#number");
@@ -41,7 +41,7 @@ function cleanPass() {
     pass.innerHTML = '';
 }
 function changeSize(action) {
-    let currentSize = parseInt(size.value);
+    const currentSize = parseInt(size.value);
     if (action == "more") {
         if (currentSize < MORE_LIMIT) {
             updateSize(currentSize + 1);
