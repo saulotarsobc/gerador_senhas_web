@@ -18,7 +18,6 @@ body {
         -webkit-box-shadow: 8px 7px 10px -5px #000000bf;
         -moz-box-shadow: 8px 7px 10px -10px #000000bf;
         box-shadow: 8px 7px 30px -10px #000000bf;
-
         display: flex;
         flex-direction: column;
         align-items: space-around;
@@ -31,12 +30,10 @@ body {
         font-size: 22px;
         border-radius: 6px;
         background: #313131;
-        // padding-top: 20px;
         /* shadow */
         -webkit-box-shadow: 8px 7px 10px -5px #000000bf;
         -moz-box-shadow: 8px 7px 10px -10px #000000bf;
         box-shadow: 8px 7px 30px -10px #000000bf;
-
         position: relative;
         display: flex;
         flex-direction: column;
@@ -51,7 +48,6 @@ body {
             padding: 0;
             transform: translate(-25px, -34px);
             border-radius: 50%;
-
             display: flex;
             align-items: center;
             justify-content: center;
@@ -61,7 +57,6 @@ body {
                 height: 20px;
                 width: 20px;
             }
-
         }
 
         #pass {
@@ -78,7 +73,7 @@ body {
             width: 100%;
             transform: translate(-10px, 27px);
             overflow: hidden;
-            scale: .88;
+            scale: .8;
 
             #security_level_bar {
                 -webkit-transition: all 700ms;
@@ -100,7 +95,6 @@ body {
         background-color: white;
         padding: 5px;
         border-radius: 6px;
-
         /* shadow */
         -webkit-box-shadow: 8px 7px 10px -5px #000000bf;
         -moz-box-shadow: 8px 7px 10px -10px #000000bf;
