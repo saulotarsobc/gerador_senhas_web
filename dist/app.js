@@ -74,37 +74,6 @@ function showPass(newPass) {
         setTimeout(() => { pass.innerHTML += el; }, (INTERVAL * i));
     });
 }
-function getPass() {
-    let count = 0;
-    cleanPass();
-    let newPass = [];
-    if (isChecked()) {
-        while (count < parseInt(size.value)) {
-            if (upper.checked && (count < parseInt(size.value))) {
-                newPass.push(getUpper());
-                count++;
-            }
-            if (lower.checked && (count < parseInt(size.value))) {
-                newPass.push(getLower());
-                count++;
-            }
-            if (number.checked && (count < parseInt(size.value))) {
-                newPass.push(getNumber());
-                count++;
-            }
-            if (special.checked && (count < parseInt(size.value))) {
-                newPass.push(getSpecial());
-                count++;
-            }
-        }
-        showPass(newPass);
-        updateSecurityLevel();
-    }
-    else {
-        upper.checked = true;
-        getPass();
-    }
-}
 function updateSecurityLevel() {
     let security_level = 12 + (parseInt(input_size.value) * 2);
     security_level_bar.style.background = "#ff4d4d";
@@ -140,5 +109,36 @@ function updateSecurityLevel() {
     }
     security_level_bar.style.width = security_level + "%";
 }
-updateSecurityLevel();
+function getPass() {
+    let count = 0;
+    cleanPass();
+    let newPass = [];
+    if (isChecked()) {
+        while (count < parseInt(size.value)) {
+            if (upper.checked && (count < parseInt(size.value))) {
+                newPass.push(getUpper());
+                count++;
+            }
+            if (lower.checked && (count < parseInt(size.value))) {
+                newPass.push(getLower());
+                count++;
+            }
+            if (number.checked && (count < parseInt(size.value))) {
+                newPass.push(getNumber());
+                count++;
+            }
+            if (special.checked && (count < parseInt(size.value))) {
+                newPass.push(getSpecial());
+                count++;
+            }
+        }
+        showPass(newPass);
+        updateSecurityLevel();
+    }
+    else {
+        upper.checked = true;
+        getPass();
+    }
+}
 updateSize(LESS_LIMIT);
+updateSecurityLevel();

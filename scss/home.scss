@@ -72,12 +72,13 @@ body {
 
         #wrap_security_level {
             background-color: white;
-            border-radius: 5px;
+            border-radius: 3px;
             position: absolute;
-            height: 15px;
+            height: 10px;
             width: 100%;
-            transform: translate(-10px, 45px);
+            transform: translate(-10px, 27px);
             overflow: hidden;
+            scale: .98;
 
             #security_level_bar {
                 -webkit-transition: all 700ms;
