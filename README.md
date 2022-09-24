@@ -1,6 +1,6 @@
 # GERADOR DE SENHAS
 
-![banner](img/banner2.png)
+![banner](img/banner3.png)
 
 ## REFERÊNCIAS
 

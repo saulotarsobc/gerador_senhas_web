@@ -2,15 +2,54 @@
 const size = document.querySelector("#input_size");
 const pass = document.querySelector("#pass");
 const input_size = document.querySelector("#input_size");
+const more = document.querySelector("#more");
+const less = document.querySelector("#less");
 const upper = document.querySelector("#upper");
 const lower = document.querySelector("#lower");
 const number = document.querySelector("#number");
 const special = document.querySelector("#special");
 const gerar = document.querySelector("#gerar");
+const copiar = document.querySelector("#copiar");
 const security_level_bar = document.querySelector("#security_level_bar");
 const MORE_LIMIT = 24;
 const LESS_LIMIT = 8;
 const INTERVAL = 22;
+document.addEventListener('keydown', (event) => {
+    event.preventDefault();
+    console.log(event.code);
+    if (event.code == 'ArrowUp') {
+        more.click();
+    }
+    ;
+    if (event.code == 'ArrowDown') {
+        less.click();
+    }
+    ;
+    if (event.code == 'KeyM') {
+        upper.click();
+    }
+    ;
+    if (event.code == 'KeyI') {
+        lower.click();
+    }
+    ;
+    if (event.code == 'KeyN') {
+        number.click();
+    }
+    ;
+    if (event.code == 'KeyE') {
+        special.click();
+    }
+    ;
+    if (event.code == 'Space') {
+        gerar.click();
+    }
+    ;
+    if (event.code == 'KeyC') {
+        copiar.click();
+    }
+    ;
+});
 function playKeySound() {
     let key_sound = new Audio('./sounds/key_sound.wav');
     key_sound.play();
