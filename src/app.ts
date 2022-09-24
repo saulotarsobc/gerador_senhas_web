@@ -16,9 +16,7 @@ const MORE_LIMIT: number = 24;
 const LESS_LIMIT: number = 8;
 const INTERVAL: number = 22;
 
-document.addEventListener('keydown', (event: KeyboardEvent) => {
-    event.preventDefault();
-    console.log(event.code);
+function keyboardShortcut(event: KeyboardEvent) {
     if (event.code == 'ArrowUp') {
         more.click();
     };
@@ -43,6 +41,13 @@ document.addEventListener('keydown', (event: KeyboardEvent) => {
     if (event.code == 'KeyC') {
         copiar.click();
     };
+}
+
+document.addEventListener('keydown', (event: KeyboardEvent) => {
+    if (event.code != 'F12') {
+        event.preventDefault();
+        keyboardShortcut(event);
+    }
 })
 
 function playKeySound() {

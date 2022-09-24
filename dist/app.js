@@ -14,9 +14,7 @@ const security_level_bar = document.querySelector("#security_level_bar");
 const MORE_LIMIT = 24;
 const LESS_LIMIT = 8;
 const INTERVAL = 22;
-document.addEventListener('keydown', (event) => {
-    event.preventDefault();
-    console.log(event.code);
+function keyboardShortcut(event) {
     if (event.code == 'ArrowUp') {
         more.click();
     }
@@ -49,6 +47,12 @@ document.addEventListener('keydown', (event) => {
         copiar.click();
     }
     ;
+}
+document.addEventListener('keydown', (event) => {
+    if (event.code != 'F12') {
+        event.preventDefault();
+        keyboardShortcut(event);
+    }
 });
 function playKeySound() {
     let key_sound = new Audio('./sounds/key_sound.wav');
