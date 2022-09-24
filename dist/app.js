@@ -16,12 +16,12 @@ const LESS_LIMIT = 8;
 const INTERVAL = 22;
 function tableValues() {
     console.table({
+        'senha': pass.innerHTML,
         'caracteres': parseInt(size.value),
         'maiusculo': upper.checked,
         'minusculos': lower.checked,
         'numeros': number.checked,
         'especiais': special.checked,
-        'senha': pass.innerHTML,
     });
 }
 function keyboardShortcut(event) {

@@ -18,12 +18,12 @@ const INTERVAL: number = 22;
 
 function tableValues() {
     console.table({
+        'senha': pass.innerHTML,
         'caracteres': parseInt(size.value),
         'maiusculo': upper.checked,
         'minusculos': lower.checked,
         'numeros': number.checked,
         'especiais': special.checked,
-        'senha': pass.innerHTML,
     });
 }
 
