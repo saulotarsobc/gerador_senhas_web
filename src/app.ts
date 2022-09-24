@@ -1,7 +1,6 @@
 const pass = document.querySelector("#pass") as HTMLParagraphElement;
 
 const size = document.querySelector("#size") as HTMLInputElement;
-let security_level = 12 + (parseInt(size.value) * 2);
 
 const more = document.querySelector("#more") as HTMLInputElement;
 const less = document.querySelector("#less") as HTMLInputElement;
@@ -31,33 +30,46 @@ function tableValues() {
 
 function keyboardShortcut(event: KeyboardEvent) {
     if (event.code == 'ArrowUp') {
+        more.focus();
         more.click();
     };
     if (event.code == 'ArrowDown') {
+        less.focus();
         less.click();
     };
     if (event.code == 'KeyM') {
+        upper.focus();
         upper.click();
     };
     if (event.code == 'KeyI') {
+        lower.focus();
         lower.click();
     };
     if (event.code == 'KeyN') {
+        number.focus();
         number.click();
     };
     if (event.code == 'KeyE') {
+        special.focus();
         special.click();
     };
-    if (event.code == 'Space') {
+    if (event.code == 'KeyX') {
+        gerar.focus();
         gerar.click();
     };
     if (event.code == 'KeyC') {
+        copiar.focus();
         copiar.click();
     };
 }
 
 document.addEventListener('keydown', (event: KeyboardEvent) => {
-    if (event.code != 'F12') {
+    let key: String = event.code;
+
+    if (
+        (key != "F12") ||
+        (key != "Tab")
+    ) {
         event.preventDefault();
         keyboardShortcut(event);
     }
@@ -143,6 +155,7 @@ function showPass(newPass: any) {
 }
 
 function updateSecurityLevel() {
+    let security_level = 12 + (parseInt(size.value) * 2);
     security_level_bar.style.background = "#ff4d4d";
 
     if (upper.checked) {
