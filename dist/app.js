@@ -1,7 +1,7 @@
 "use strict";
-const size = document.querySelector("#input_size");
 const pass = document.querySelector("#pass");
-const input_size = document.querySelector("#input_size");
+const size = document.querySelector("#size");
+let security_level = 12 + (parseInt(size.value) * 2);
 const more = document.querySelector("#more");
 const less = document.querySelector("#less");
 const upper = document.querySelector("#upper");
@@ -89,7 +89,7 @@ function getSpecial() {
     return special[Math.floor(Math.random() * special.length)];
 }
 function updateSize(val) {
-    input_size.value = val;
+    size.value = val;
 }
 function cleanPass() {
     pass.innerHTML = '';
@@ -131,7 +131,6 @@ function showPass(newPass) {
     }, 1000);
 }
 function updateSecurityLevel() {
-    let security_level = 12 + (parseInt(input_size.value) * 2);
     security_level_bar.style.background = "#ff4d4d";
     if (upper.checked) {
         security_level = security_level + 11;
@@ -149,8 +148,8 @@ function updateSecurityLevel() {
         (lower.checked == false) &&
         (number.checked == true) &&
         (special.checked == false) &&
-        (parseInt(input_size.value) < 12)) {
-        security_level = 10 + parseInt(input_size.value);
+        (parseInt(size.value) < 12)) {
+        security_level = 10 + parseInt(size.value);
         console.log('aki');
     }
     if (security_level >= 40) {

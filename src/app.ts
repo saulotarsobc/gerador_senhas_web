@@ -1,6 +1,8 @@
-const size = document.querySelector("#input_size") as HTMLInputElement;
 const pass = document.querySelector("#pass") as HTMLParagraphElement;
-const input_size = document.querySelector("#input_size") as HTMLInputElement;
+
+const size = document.querySelector("#size") as HTMLInputElement;
+let security_level = 12 + (parseInt(size.value) * 2);
+
 const more = document.querySelector("#more") as HTMLInputElement;
 const less = document.querySelector("#less") as HTMLInputElement;
 
@@ -92,7 +94,7 @@ function getSpecial(): string {
 }
 
 function updateSize(val: any) {
-    input_size.value = val;
+    size.value = val;
 }
 
 function cleanPass() {
@@ -141,7 +143,6 @@ function showPass(newPass: any) {
 }
 
 function updateSecurityLevel() {
-    let security_level = 12 + (parseInt(input_size.value) * 2);
     security_level_bar.style.background = "#ff4d4d";
 
     if (upper.checked) {
@@ -165,9 +166,9 @@ function updateSecurityLevel() {
         (lower.checked == false) &&
         (number.checked == true) &&
         (special.checked == false) &&
-        (parseInt(input_size.value) < 12)
+        (parseInt(size.value) < 12)
     ) {
-        security_level = 10 + parseInt(input_size.value);
+        security_level = 10 + parseInt(size.value);
         console.log('aki')
     }
 

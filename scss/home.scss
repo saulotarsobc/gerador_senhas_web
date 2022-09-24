@@ -94,7 +94,7 @@ body {
         -moz-box-shadow: 8px 7px 10px -10px #000000bf;
         box-shadow: 8px 7px 30px -10px #000000bf;
 
-        #size {
+        #size_wrap {
             display: flex;
 
             #controls {
@@ -120,7 +120,7 @@ body {
                 }
             }
 
-            #input_size {
+            #size {
                 width: 80px;
                 margin: 1px;
                 font-size: 40px;
@@ -140,8 +140,16 @@ body {
             font-size: 18px;
 
             .wrap_type {
+                cursor: pointer;
+                text-justify: center;
+                height: 25px;
+                display: flex;
+                input{
+                    height: 100%;
+                }
                 label {
                     font-family: monospace;
+                    margin-left: 4px;
                 }
             }
         }
