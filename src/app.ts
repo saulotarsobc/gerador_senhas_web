@@ -171,6 +171,7 @@ function getPass() {
 
     } else {
         upper.checked = true;
+        lower.checked = true;
         getPass();
     }
 }
