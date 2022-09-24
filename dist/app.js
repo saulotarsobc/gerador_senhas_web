@@ -14,6 +14,16 @@ const security_level_bar = document.querySelector("#security_level_bar");
 const MORE_LIMIT = 24;
 const LESS_LIMIT = 8;
 const INTERVAL = 22;
+function tableValues() {
+    console.table({
+        'caracteres': parseInt(size.value),
+        'maiusculo': upper.checked,
+        'minusculos': lower.checked,
+        'numeros': number.checked,
+        'especiais': special.checked,
+        'senha': pass.innerHTML,
+    });
+}
 function keyboardShortcut(event) {
     if (event.code == 'ArrowUp') {
         more.click();
@@ -116,6 +126,9 @@ function showPass(newPass) {
     shuffleArray(newPass).forEach((el, i) => {
         setTimeout(() => { pass.innerHTML += el; }, (INTERVAL * i));
     });
+    setTimeout(() => {
+        tableValues();
+    }, 1000);
 }
 function updateSecurityLevel() {
     let security_level = 12 + (parseInt(input_size.value) * 2);

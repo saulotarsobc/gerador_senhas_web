@@ -16,6 +16,17 @@ const MORE_LIMIT: number = 24;
 const LESS_LIMIT: number = 8;
 const INTERVAL: number = 22;
 
+function tableValues() {
+    console.table({
+        'caracteres': parseInt(size.value),
+        'maiusculo': upper.checked,
+        'minusculos': lower.checked,
+        'numeros': number.checked,
+        'especiais': special.checked,
+        'senha': pass.innerHTML,
+    });
+}
+
 function keyboardShortcut(event: KeyboardEvent) {
     if (event.code == 'ArrowUp') {
         more.click();
@@ -124,6 +135,9 @@ function showPass(newPass: any) {
     shuffleArray(newPass).forEach((el: string, i: number) => {
         setTimeout(() => { pass.innerHTML += el; }, (INTERVAL * i));
     });
+    setTimeout(() => {
+        tableValues();
+    }, 1000);
 }
 
 function updateSecurityLevel() {
