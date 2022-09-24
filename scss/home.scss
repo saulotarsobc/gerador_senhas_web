@@ -3,7 +3,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* gradient */
     background: #eeaeca;
     background: radial-gradient(circle, #eeaeca 0%, #94bbe9 100%);
 
@@ -14,7 +13,6 @@ body {
         border-radius: 10px;
         padding: 20px;
         background: #c5c5c51a;
-        /* shadow */
         -webkit-box-shadow: 8px 7px 10px -5px #000000bf;
         -moz-box-shadow: 8px 7px 10px -10px #000000bf;
         box-shadow: 8px 7px 30px -10px #000000bf;
@@ -30,7 +28,6 @@ body {
         font-size: 22px;
         border-radius: 6px;
         background: #313131;
-        /* shadow */
         -webkit-box-shadow: 8px 7px 10px -5px #000000bf;
         -moz-box-shadow: 8px 7px 10px -10px #000000bf;
         box-shadow: 8px 7px 30px -10px #000000bf;
@@ -80,7 +77,6 @@ body {
                 -o-transition: all 700ms;
                 transition: all 700ms;
                 height: 100%;
-                /* shadow */
                 -webkit-box-shadow: 8px 7px 10px -5px #000000bf;
                 -moz-box-shadow: 8px 7px 10px -10px #000000bf;
                 box-shadow: 8px 7px 30px -10px #000000bf;
@@ -94,7 +90,6 @@ body {
         background-color: white;
         padding: 5px;
         border-radius: 6px;
-        /* shadow */
         -webkit-box-shadow: 8px 7px 10px -5px #000000bf;
         -moz-box-shadow: 8px 7px 10px -10px #000000bf;
         box-shadow: 8px 7px 30px -10px #000000bf;
@@ -145,14 +140,9 @@ body {
             font-size: 18px;
 
             .wrap_type {
-                // input {}
-
                 label {
-                    // font-family: 'Poppins', sans-serif;
                     font-family: monospace;
                 }
-
-                // .type {}
             }
         }
     }
@@ -171,8 +161,6 @@ body {
             cursor: pointer;
             font-size: 15px;
             transition: all .2s;
-
-            /* shadow */
             -webkit-box-shadow: 8px 7px 10px -5px #000000bf;
             -moz-box-shadow: 8px 7px 10px -10px #000000bf;
             box-shadow: 8px 7px 30px -10px #000000bf;
