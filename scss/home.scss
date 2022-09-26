@@ -56,7 +56,7 @@ body {
         }
 
         #pass {
-            font-family: monospace;
+            font-family: 'Courier New', Courier, monospace;
             color: white;
             overflow: hidden;
         }
@@ -149,7 +149,7 @@ body {
                 }
 
                 label {
-                    font-family: monospace;
+                    font-family: 'Courier New', Courier, monospace;
                     margin-left: 4px;
                 }
             }
@@ -163,7 +163,8 @@ body {
         .btn {
             margin: 2px;
             height: 40px;
-            font-family: 'Poppins', sans-serif;
+            // font-family: 'Poppins', sans-serif;
+            font-family: 'Courier New', Courier, monospace;
             color: white;
             background-color: #313131;
             border: none;

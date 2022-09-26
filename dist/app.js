@@ -29,42 +29,34 @@ function keyboardShortcut(event) {
         more.focus();
         more.click();
     }
-    ;
     if (event.code == 'ArrowDown') {
         less.focus();
         less.click();
     }
-    ;
     if (event.code == 'KeyM') {
         upper.focus();
         upper.click();
     }
-    ;
     if (event.code == 'KeyI') {
         lower.focus();
         lower.click();
     }
-    ;
     if (event.code == 'KeyN') {
         number.focus();
         number.click();
     }
-    ;
     if (event.code == 'KeyE') {
         special.focus();
         special.click();
     }
-    ;
-    if (event.code == 'KeyX') {
+    if (event.code == 'KeyG') {
         gerar.focus();
         gerar.click();
     }
-    ;
     if (event.code == 'KeyC') {
         copiar.focus();
         copiar.click();
     }
-    ;
 }
 document.addEventListener('keydown', (event) => {
     let key = event.code;
