@@ -13,10 +13,12 @@ const security_level_bar = document.querySelector("#security_level_bar");
 const MORE_LIMIT = 24;
 const LESS_LIMIT = 8;
 const INTERVAL = 22;
+console.log();
 function tableValues() {
     console.table({
         'senha': pass.innerHTML,
         'caracteres': parseInt(size.value),
+        'segurança': security_level_bar.style.width,
         'maiusculo': upper.checked,
         'minusculos': lower.checked,
         'numeros': number.checked,
@@ -149,10 +151,10 @@ function updateSecurityLevel() {
         security_level = security_level + 11;
     }
     if (number.checked) {
-        security_level = security_level + 11;
+        security_level = security_level + 8;
     }
     if (special.checked) {
-        security_level = security_level + 11;
+        security_level = security_level + 14;
     }
     if ((upper.checked == false) &&
         (lower.checked == false) &&

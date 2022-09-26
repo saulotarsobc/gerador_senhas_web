@@ -17,10 +17,13 @@ const MORE_LIMIT: number = 24;
 const LESS_LIMIT: number = 8;
 const INTERVAL: number = 22;
 
+console.log()
+
 function tableValues() {
     console.table({
         'senha': pass.innerHTML,
         'caracteres': parseInt(size.value),
+        'segurança': security_level_bar.style.width,
         'maiusculo': upper.checked,
         'minusculos': lower.checked,
         'numeros': number.checked,
@@ -167,11 +170,11 @@ function updateSecurityLevel() {
     }
 
     if (number.checked) {
-        security_level = security_level + 11;
+        security_level = security_level + 8;
     }
 
     if (special.checked) {
-        security_level = security_level + 11;
+        security_level = security_level + 14;
     }
 
     if (
