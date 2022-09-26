@@ -111,10 +111,10 @@ body {
                     border-radius: 6px;
                     border: none;
                     cursor: pointer;
-                    transition: all .2s;
+                    transition: scale .2s;
 
                     &:hover {
-                        scale: 1.07;
+                        scale: 1.03;
                     }
                 }
             }
@@ -151,6 +151,7 @@ body {
 
                 label {
                     font-family: 'Courier New', Courier, monospace;
+                    font-weight: 300px;
                     margin-left: 4px;
                 }
             }
@@ -165,12 +166,13 @@ body {
             margin: 2px;
             height: 40px;
             font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
             color: white;
             background-color: #313131;
             border: none;
             cursor: pointer;
             font-size: 15px;
-            transition: all .2s;
+            transition: scale .2s;
             -webkit-box-shadow: 8px 7px 10px -5px #000000bf;
             -moz-box-shadow: 8px 7px 10px -10px #000000bf;
             box-shadow: 8px 7px 30px -10px #000000bf;
