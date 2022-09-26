@@ -1,29 +1,24 @@
 const pass = document.querySelector("#pass") as HTMLParagraphElement;
-
 const size = document.querySelector("#size") as HTMLInputElement;
-
 const more = document.querySelector("#more") as HTMLInputElement;
 const less = document.querySelector("#less") as HTMLInputElement;
-
 const upper = document.querySelector("#upper") as HTMLInputElement;
 const lower = document.querySelector("#lower") as HTMLInputElement;
 const number = document.querySelector("#number") as HTMLInputElement;
 const special = document.querySelector("#special") as HTMLInputElement;
 const gerar = document.querySelector("#gerar") as HTMLInputElement;
 const copiar = document.querySelector("#copiar") as HTMLInputElement;
-const security_level_bar = document.querySelector("#security_level_bar") as HTMLInputElement;
+const safe_bar = document.querySelector("#safe_bar") as HTMLInputElement;
 
 const MORE_LIMIT: number = 24;
 const LESS_LIMIT: number = 8;
 const INTERVAL: number = 22;
 
-console.log()
-
 function tableValues() {
     console.table({
         'senha': pass.innerHTML,
         'caracteres': parseInt(size.value),
-        'segurança': security_level_bar.style.width,
+        'segurança': safe_bar.style.width,
         'maiusculo': upper.checked,
         'minusculos': lower.checked,
         'numeros': number.checked,
@@ -76,7 +71,7 @@ document.addEventListener('keydown', (event: KeyboardEvent) => {
         event.preventDefault();
         keyboardShortcut(event);
     }
-})
+});
 
 function playKeySound() {
     let key_sound = new Audio('./sounds/key_sound.wav');
@@ -159,7 +154,7 @@ function showPass(newPass: any) {
 
 function updateSecurityLevel() {
     let security_level = 12 + (parseInt(size.value) * 2);
-    security_level_bar.style.background = "#ff4d4d";
+    safe_bar.style.background = "#ff4d4d";
 
     if (upper.checked) {
         security_level = security_level + 11;
@@ -189,19 +184,19 @@ function updateSecurityLevel() {
     }
 
     if (security_level >= 40) {
-        security_level_bar.style.background = "#ff933b";
+        safe_bar.style.background = "#ff933b";
     }
 
     if (security_level >= 51) {
-        security_level_bar.style.background = "#edff4f";
+        safe_bar.style.background = "#edff4f";
     }
 
     if (security_level >= 88) {
-        security_level_bar.style.background = "#4fff5e";
+        safe_bar.style.background = "#4fff5e";
         security_level = 100;
     }
 
-    security_level_bar.style.width = security_level + "%";
+    safe_bar.style.width = security_level + "%";
 }
 
 function getPass() {

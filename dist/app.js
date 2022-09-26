@@ -9,16 +9,15 @@ const number = document.querySelector("#number");
 const special = document.querySelector("#special");
 const gerar = document.querySelector("#gerar");
 const copiar = document.querySelector("#copiar");
-const security_level_bar = document.querySelector("#security_level_bar");
+const safe_bar = document.querySelector("#safe_bar");
 const MORE_LIMIT = 24;
 const LESS_LIMIT = 8;
 const INTERVAL = 22;
-console.log();
 function tableValues() {
     console.table({
         'senha': pass.innerHTML,
         'caracteres': parseInt(size.value),
-        'segurança': security_level_bar.style.width,
+        'segurança': safe_bar.style.width,
         'maiusculo': upper.checked,
         'minusculos': lower.checked,
         'numeros': number.checked,
@@ -143,7 +142,7 @@ function showPass(newPass) {
 }
 function updateSecurityLevel() {
     let security_level = 12 + (parseInt(size.value) * 2);
-    security_level_bar.style.background = "#ff4d4d";
+    safe_bar.style.background = "#ff4d4d";
     if (upper.checked) {
         security_level = security_level + 11;
     }
@@ -165,16 +164,16 @@ function updateSecurityLevel() {
         console.log('aki');
     }
     if (security_level >= 40) {
-        security_level_bar.style.background = "#ff933b";
+        safe_bar.style.background = "#ff933b";
     }
     if (security_level >= 51) {
-        security_level_bar.style.background = "#edff4f";
+        safe_bar.style.background = "#edff4f";
     }
     if (security_level >= 88) {
-        security_level_bar.style.background = "#4fff5e";
+        safe_bar.style.background = "#4fff5e";
         security_level = 100;
     }
-    security_level_bar.style.width = security_level + "%";
+    safe_bar.style.width = security_level + "%";
 }
 function getPass() {
     let count = 0;

@@ -62,23 +62,23 @@ body {
         }
 
         #wrap_security_level {
-            background-color: white;
+            background-color: #ffffffa4;
             border-radius: 3px;
             position: absolute;
             height: 10px;
             width: 100%;
-            transform: translate(-10px, 42px);
+            transform: translate(-10px, 45px);
             overflow: hidden;
+            -webkit-box-shadow: 8px 7px 10px -5px #000000bf;
+            -moz-box-shadow: 8px 7px 10px -10px #000000bf;
+            box-shadow: 8px 7px 30px -10px #000000bf;
 
-            #security_level_bar {
+            #safe_bar {
                 -webkit-transition: all 700ms;
                 -moz-transition: all 700ms;
                 -o-transition: all 700ms;
                 transition: all 700ms;
                 height: 100%;
-                -webkit-box-shadow: 8px 7px 10px -5px #000000bf;
-                -moz-box-shadow: 8px 7px 10px -10px #000000bf;
-                box-shadow: 8px 7px 30px -10px #000000bf;
             }
         }
     }
@@ -143,9 +143,11 @@ body {
                 text-justify: center;
                 height: 25px;
                 display: flex;
-                input{
+
+                input {
                     height: 100%;
                 }
+
                 label {
                     font-family: monospace;
                     margin-left: 4px;
